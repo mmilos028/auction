@@ -1,0 +1,56 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.header-down {
+  min-height: 50px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: $silver;
+  border: 1px solid #e7e7e7;
+}
+
+.footer {
+  background-color: #ffffff;
+  min-height: 40px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.bg-gray {
+  background-color: $silver;
+}
+
+.gray-ribbon {
+  min-height: 70px;
+  padding: 5px;
+  justify-content: center;
+}
+
+.copyright {
+  font-size: 9px;
+  color: #999;
+  text-align: right;
+}
+
+.auction-card-price-label{
+  color: black;
+  font-weight: normal;
+}
+
+.auction-card-price {
+  display: block;
+  color: darkred;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.auction-card-currency {
+  color: #999999;
+  font-size: 12px;
+}

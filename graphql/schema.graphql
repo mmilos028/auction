@@ -1,0 +1,56 @@
+"A date string with format `Y-m-d`, e.g. `2011-05-23`."
+scalar Date @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\Date")
+
+"A datetime string with format `Y-m-d H:i:s`, e.g. `2018-05-23 13:43:32`."
+scalar DateTime @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\DateTime")
+
+type Query {
+    users_all: [User!]! @all
+    users: [User!]! @paginate(defaultCount: 10)
+    user(id: ID @eq): User @find
+}
+
+
+type Category {
+    name: String!
+    description: String!
+    image: String!
+    status: String!
+    sort_order: String!
+    parent_id: String!
+    top: String!
+    seo_url: String!
+    seo_url_path: String!
+}
+
+type Auction {
+    id: ID!
+    title: String!
+    auction_type_status: String!
+    start_price: String!
+    buy_now_status: String!
+    buy_now_price: String!
+    start_auction_at: String!
+    auction_duration_days: String!
+    auction_repeat: String!
+    number_to_repeat: String!
+    auction_shipping_from_id: String!
+    auction_payment_method_id: String!
+    category_id: String!
+    description: String!
+    item_status_id: String!
+    user_id: String!
+
+    user: User! @belongsTo
+    category: Category! @belongsTo
+}
+
+type User {
+    id: ID!
+    name: String!
+    email: String!
+    created_at: DateTime!
+    updated_at: DateTime!
+
+    auctions: [Auction!]! @hasMany
+}
